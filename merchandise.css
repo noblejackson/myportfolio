@@ -1,0 +1,1112 @@
+/* General reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: rgb(0, 0, 0);
+    --second-bg-color: #192227;
+    --text-color: white;
+    --main-color: #1573ff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header .................................................................................*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--main-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    animation: slideTop 3s ease forwards;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+}
+
+/* Banner Styles .....................................................................*/
+.banner-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-content {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: left;
+}
+
+.banner-content h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.order-btn {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    transform: translateX(-50%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Overlay for brightness reduction */
+    z-index: 1;
+}
+
+.banner-content, .order-btn {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.slide:nth-child(1) { animation: fade 25s infinite; }
+.slide:nth-child(2) { animation: fade 25s infinite 5s; }
+.slide:nth-child(3) { animation: fade 25s infinite 10s; }
+.slide:nth-child(4) { animation: fade 25s infinite 15s; }
+.slide:nth-child(5) { animation: fade 25s infinite 20s; }
+
+/* Home section on mobile view ......................................................... */
+@media (max-width: 767px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        display: none; /* Hide navbar initially */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+    .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+
+    .navbar a {
+        font-size: 2rem;
+        margin: 1.5rem 0;
+        color: white;
+        animation: slideTop 1s ease forwards;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 3rem 9%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(90px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        height: 5rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+        color: var(--text-color);
+        font-weight: 800;
+        cursor: pointer;
+        transition: 1s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.1);
+    }
+    .banner-slider {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        padding: auto;
+    }
+    
+    .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .banner-content {
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        text-align: left;
+    }
+    
+    .banner-content h2 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .banner-content p {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .order-btn {
+        display: inline-block;
+        background-color: #ff6600;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        text-decoration: none;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+        transform: translateX(-50%);
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1); /* Overlay for brightness reduction */
+        z-index: 1;
+    }
+    
+    .banner-content, .order-btn {
+        position: relative;
+        z-index: 2;
+    }
+    
+    @keyframes fade {
+        0% { opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    
+    .slide:nth-child(1) { animation: fade 25s infinite; }
+    .slide:nth-child(2) { animation: fade 25s infinite 5s; }
+    .slide:nth-child(3) { animation: fade 25s infinite 10s; }
+    .slide:nth-child(4) { animation: fade 25s infinite 15s; }
+    .slide:nth-child(5) { animation: fade 25s infinite 20s; }
+}
+
+
+/* Products section.......................................................*/
+.products-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.filter-buttons {
+    margin: 1rem;
+    text-align: center;
+}
+.filter-buttons .btn {
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2.3rem;
+    font-weight: 100;
+    letter-spacing: 0.1px;
+    margin-left: 0.5rem;
+    color: white;
+}
+.filter-buttons .btn:hover {
+    color: white;
+    background-color: white;
+}
+
+.products-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust based on screen size */
+    gap: 20px;
+}
+
+.products-box {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 2px solid #1d7aa5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.products-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.products-content {
+    padding: 20px;
+}
+
+.order-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.order-btn:hover {
+    background-color: #ffffff;
+    color: var(--main-color);
+}
+
+
+/*services section.............................................................................*/
+.services-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.filter-buttons {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.filter-buttons .btn {
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: #000;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.filter-buttons .btn:hover, .filter-buttons .btn.active {
+    color: #fff;
+    background-color: #1d7aa5;
+    border: 2px solid #1d7aa5;
+}
+
+.services-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust based on screen size */
+    gap: 20px;
+}
+
+.service-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+}
+
+.service-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 20px;
+}
+
+.service-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.service-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.service-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.service-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Product Sourcing Section.......................................................................... */
+.product-sourcing {
+    padding: 60px 20px;
+    background-color: #f4f4f9;
+}
+
+.section-title {
+    font-size: 4.5rem;
+    margin-bottom: 40px;
+    color: black;
+    text-align: center;
+}
+
+
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Image container styling */
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Content container styling */
+.content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    text-align: left;
+}
+
+.product-text p {
+    font-size: 2rem;
+    line-height: 1.8;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .product-sourcing {
+        padding: 60px 20px;
+        background-color: #f4f4f9;
+    }
+
+    .section-title {
+        font-size: 4.5rem;
+        margin-bottom: 40px;
+        color: black;
+        text-align: center;
+    }
+
+    .content {
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Stack the items vertically on mobile */
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Image container styling */
+    .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: -1; /* Ensures the image comes before content */
+    }
+
+    .product-image img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-image img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Content container styling */
+    .content-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        text-align: left;
+        align-items: center; /* Center content horizontally */
+    }
+
+    .product-text p {
+        font-size: 2rem;
+        line-height: 1.8;
+        color: #000000;
+        margin-bottom: 20px;
+        text-align: center; /* Ensure text is centered */
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #007bff;
+        color: #ffffff;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px; /* Add margin for spacing */
+        align-self: center; /* Ensures the button is centered horizontally */
+    }
+
+    .cta-button:hover {
+        background-color: #0056b3;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+
+
+/*logistics section..................................................................................*/
+.logistics-section {
+    padding: 40px;
+    background-color: #eaeaea;
+    max-width: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.section-title {
+    font-size: 4.5rem;
+    margin-bottom: 40px;
+    color: black;
+    text-align: center;
+}
+
+.logistics-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Image container styling */
+.logistics-image {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logistics-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 480px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Text container styling */
+.logistics-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.logistics-text h2 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.logistics-text p {
+    font-size: 2.5rem;
+    line-height: 1.6;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .logistics-content {
+        flex-direction: column;
+    }
+
+    .logistics-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .logistics-text {
+        max-width: 100%;
+    }
+
+    .logistics-text h2 {
+        font-size: 20px;
+    }
+}
+
+
+
+/* Study abroad Section styles................................................................. */
+.study-abroad-section {
+    padding: 40px;
+    background-color: #eef5ff;
+    max-width: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(252, 250, 250, 0.1);
+}
+.section-title {
+    font-size: 4.5rem;
+    margin-bottom: 40px;
+    color: black;
+    text-align: center;
+}
+
+.study-abroad-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Image container styling */
+.study-abroad-image {
+    flex: 1;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.study-abroad-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 480px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Text container styling */
+.study-abroad-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.study-abroad-text h2 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.study-abroad-text p {
+    font-size: 2.5rem;
+    line-height: 1.6;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .study-abroad-content {
+        flex-direction: column;
+    }
+
+    .study-abroad-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .study-abroad-text {
+        max-width: 100%;
+    }
+
+    .study-abroad-text h2 {
+        font-size: 20px;
+    }
+}
+
+
+
+/* FAQs Section styles....................................................................................*/
+.faqs-section {
+    padding: 40px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faqs-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* FAQ item styles */
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* FAQ Question button styling */
+.faq-question {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #f7f7f7;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.faq-question:hover {
+    background-color: #e2e2e2;
+}
+
+/* Toggle icon styling */
+.toggle-icon {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* FAQ answer visibility settings */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-size: 16px;
+    padding-left: 15px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* FAQ answer revealed when .open class is added */
+.faq-item.open .faq-answer {
+    max-height: 200px; /* Adjust as necessary for longer answers */
+}
+
+/* Toggle icon for open state */
+.faq-item.open .toggle-icon {
+    transform: rotate(45deg); /* Rotate "+" to "x" */
+    transition: transform 0.3s ease;
+}
+
+
+/*Footer section..............................................................................................*/
+@media(min-width: 1289px){
+    .footer{
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      padding: 30px 0;
+      background-color: rgb(0, 0, 0);
+    }
+    .footer .social{
+      text-align: center;
+      padding-bottom: 1px;
+      padding-top: 1px;
+      color: white;
+    }
+    .footer .social a{
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 4rem;
+      height: 4rem;
+      background: transparent;
+      border: 0.2rem solid var(--main-color);
+      font-size: 3rem;
+      border-radius: 50%;
+      color: var(--main-color);
+      margin: 3rem 1.5rem 3rem 0;
+      transition: 0.3s ease;
+    }
+    .footer .social a:hover{
+      color: white;
+      transform: scale(1.3)translateY(-5px);
+      background-color: var(--main-color);
+      box-shadow: 0 0 25px var(--main-color);
+    }
+    .footer ul{
+      margin-top: 0;
+      padding: 0;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .footer ul li a{
+      color: white;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s ease-in-out;
+    }
+    .footer ul li a:hover{
+      border-bottom: 3px solid var(--main-color);
+    }
+    .footer ul li{
+      display: inline-block;
+      padding: 0 15px;
+    }
+    .footer .copyright{
+      margin-top: 50px;
+      text-align: center;
+      font-size: 16px;
+      color: white;
+    }
+  }
+  
+  /*styles for tablet and smaller laptops................................ */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .footer {
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      padding: 25px 0;
+      background-color: rgb(0, 0, 0);
+    }
+    .footer .social {
+      text-align: center;
+      padding-bottom: 1px;
+      padding-top: 1px;
+      color: white;
+    }
+    .footer .social a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 3rem;
+      height: 3rem;
+      background: transparent;
+      border: 0.2rem solid var(--main-color);
+      font-size: 2.5rem; /* Slightly smaller font size */
+      border-radius: 50%;
+      color: var(--main-color);
+      margin: 2rem 1rem; /* Smaller margin for more compact layout */
+      transition: 0.3s ease;
+    }
+    .footer .social a:hover {
+      color: white;
+      transform: scale(1.2) translateY(-3px); /* Slightly reduced scale and translate */
+      background-color: var(--main-color);
+      box-shadow: 0 0 15px var(--main-color); /* Reduced shadow for smaller screens */
+    }
+    .footer ul {
+      margin-top: 0;
+      padding: 0;
+      font-size: 16px; /* Slightly reduced font size */
+      line-height: 1.5;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .footer ul li a {
+      color: white;
+      border-bottom: 2px solid transparent; /* Slightly smaller border */
+      transition: 0.3s ease-in-out;
+    }
+    .footer ul li a:hover {
+      border-bottom: 2px solid var(--main-color); /* Matching hover effect */
+    }
+    .footer ul li {
+      display: inline-block;
+      padding: 0 10px; /* Slightly smaller padding */
+    }
+    .footer .copyright {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px; /* Smaller font size for copyright text */
+      color: white;
+    }
+  }
+  
+  
+  /*styles for mobile devices........................*/
+  @media (max-width: 767px) {
+    .footer {
+      position: relative;
+      width: 100%;
+      padding: 1px;
+      background-color: rgb(0, 0, 0);
+      padding-bottom: 50px;
+    }
+    .footer .social {
+      text-align: center;
+      padding-bottom: 1px;
+      padding-top: 1px;
+      color: white;
+    }
+    .footer .social a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 4rem;
+      height: 4rem;
+      background: transparent;
+      border: 0.2rem solid var(--main-color);
+      font-size: 3rem;
+      border-radius: 50%;
+      color: var(--main-color);
+      margin: 3rem 1.5rem 3rem 0;
+      transition: 0.3s ease;
+      position: relative;
+      animation: borderZoom 1.5s infinite ease-in-out;
+    }
+    /* Animation Keyframes for Border Zoom Effect */
+    @keyframes borderZoom {
+      0% {
+        border-width: 0.2rem;
+      }
+      50% {
+        border-width: 0.4rem;
+      }
+      100% {
+        border-width: 0.2rem;
+      }
+    }
+    .footer .social a:hover {
+      color: white;
+      transform: scale(1.2) translateY(-3px); /* Slightly reduced scale and translate */
+      background-color: var(--main-color);
+      box-shadow: 0 0 15px var(--main-color); /* Reduced shadow for smaller screens */
+    }
+    .footer ul {
+      margin-top: 0;
+      padding: 0;
+      font-size: 14.24px;
+      line-height: 1.6;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .footer ul li a {
+      color: white;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s ease-in-out;
+    }
+    .footer ul li a:hover {
+      border-bottom: 3px solid var(--main-color);
+    }
+    .footer ul li {
+      display: inline-block;
+      padding: 0 15px;
+    }
+    .footer .copyright {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 16px;
+      color: white;
+    }
+  }

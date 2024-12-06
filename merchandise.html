@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Porfolio Website</title>
+    <link rel="stylesheet" href="merchandise.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <header class="header">
+        <a href="portfolio.html#home" class="logo">My<span> Portfolio</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#Products">Products</a>
+            <a href="#Services">Services</a>
+            <a href="#Product-sourcing">Product Sourcing</a>
+            <a href="#Logistics">Logistics</a>
+            <a href="#Study-abroad">Study Abroad</a>
+            <a href="#faqs">FAQs</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+    <div class="banner-slider">
+        <div class="slide">
+            <img src="images/Bags-banner.jpg" alt="Banner 1">
+            <div class="overlay"></div>
+            <div class="banner-content">
+                <h2>Wholesale Bags</h2>
+                <p>All grades of wholesale bags available at affordable prices</p>
+                <a href="https://wa.me/8619817402144" target="_blank" class="order-btn">SHOP NOW</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/SNEAKER_GUIDE_OPENER.webp" alt="Banner 2">
+            <div class="overlay"></div>
+            <div class="banner-content">
+                <h2>Branded Sneakers</h2>
+                <p>All grades of high end sneakers at wholesale prices</p>
+                <a href="https://wa.me/8619817402144" target="_blank" class="order-btn">SHOP NOW</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/clothing.jpeg" alt="Banner 3">
+            <div class="overlay"></div>
+            <div class="banner-content">
+                <h2>High End Clothing</h2>
+                <p>All levels of quality clothes at affordable and wholesale prices</p>
+                <a href="https://wa.me/8619817402144" target="_blank" class="order-btn">SHOP NOW</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/furniture.jpg" alt="Banner 4">
+            <div class="overlay"></div>
+            <div class="banner-content">
+                <h2>Luxury Furniture</h2>
+                <p>Your No.1 affordable but yet luxury furniture dealer with the finest from China</p>
+                <a href="https://wa.me/8619817402144" target="_blank" class="order-btn">SHOP NOW</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/Electronics.jpg" alt="Banner 5">
+            <div class="overlay"></div>
+            <div class="banner-content">
+                <h2>Electronic Gadgets</h2>
+                <p>We provide smart and sustainable devices at the best prices</p>
+                <a href="https://wa.me/8619817402144" target="_blank" class="order-btn">SHOP NOW</a>           
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="Products" class="products-section">
+        <h2 class="section-title">Our Products</h2>
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="btn" data-filter="all">ALL</button>
+            <button class="btn" data-filter="bags">Wholesale Bags</button>
+            <button class="btn" data-filter="sneakers">Branded Sneakers</button>
+            <button class="btn" data-filter="clothing">High-End Clothing</button>
+            <button class="btn" data-filter="furniture">Luxury Furniture</button>
+            <button class="btn" data-filter="electronics">Electronic Gadgets</button>
+        </div>
+        <!-- Product Gallery -->
+        <div class="products-gallery">
+            <!-- Wholesale Bags -->
+            <div class="products-box bags">
+                <div class="products-image">
+                    <img src="images/Bags-banner.jpg" alt="Wholesale Bag 1">
+                </div>
+                <div class="products-content">
+                    <h3>Wholesale Bag 1</h3>
+                    <p>Stylish and affordable wholesale bag.</p>
+                    <a href="https://wa.me/8619817402144" target="_blank" class="order-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Branded Sneakers -->
+            <div class="products-box sneakers">
+                <div class="products-image">
+                    <img src="images/SNEAKER_GUIDE_OPENER.webp" alt="Branded Sneaker 1">
+                </div>
+                <div class="products-content">
+                    <h3>Branded Sneaker 1</h3>
+                    <p>High-end sneaker at a competitive price.</p>
+                    <a href="https://wa.me/8619817402144" target="_blank" class="order-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- High-End Clothing -->
+            <div class="products-box clothing">
+                <div class="products-image">
+                    <img src="images/clothing.jpeg" alt="High-End Clothing 1">
+                </div>
+                <div class="products-content">
+                    <h3>High-End Clothing 1</h3>
+                    <p>Premium clothing for all occasions.</p>
+                    <a href="https://wa.me/8619817402144" target="_blank" class="order-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Luxury Furniture -->
+            <div class="products-box furniture">
+                <div class="products-image">
+                    <img src="images/furniture.jpg" alt="Luxury Furniture 1">
+                </div>
+                <div class="products-content">
+                    <h3>Luxury Furniture 1</h3>
+                    <p>Affordable luxury furniture.</p>
+                    <a href="https://wa.me/8619817402144" target="_blank" class="order-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Electronic Gadgets -->
+            <div class="products-box electronics">
+                <div class="products-image">
+                    <img src="images/Electronics.jpg" alt="Electronic Gadget 1">
+                </div>
+                <div class="products-content">
+                    <h3>Electronic Gadget 1</h3>
+                    <p>Smart and sustainable device.</p>
+                    <a href="https://wa.me/8619817402144" target="_blank" class="order-btn">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    <section id="Services" class="services-section">
+        <h2 class="section-title">Our Services</h2>
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="btn" data-filter="all">ALL</button>
+            <button class="btn" data-filter=".sourcing">Product Sourcing</button>
+            <button class="btn" data-filter=".logistics">Logistics to Ghana & Tanzania</button>
+            <button class="btn" data-filter=".studyabroad">Study Abroad</button>
+        </div>
+        <!-- Services Gallery -->
+        <div class="services-gallery">
+            <!-- Service 1: Product Sourcing -->
+            <div class="service-box mix sourcing">
+                <div class="service-image">
+                    <img src="images/product sourcing.jpg" alt="Product Sourcing">
+                </div>
+                <div class="service-content">
+                    <h3>Product Sourcing</h3>
+                    <p>We help you find the best products at competitive prices, from top-tier suppliers around the globe. Get the products you need effortlessly.</p>
+                    <a href="https://wa.me/8619817402144" target="_blank" class="service-btn">Contact Us</a>
+                </div>
+            </div>
+            <!-- Service 2: Logistics to Ghana and Tanzania -->
+            <div class="service-box mix logistics">
+                <div class="service-image">
+                    <img src="images/logistics.jpg" alt="Logistics to Ghana and Tanzania">
+                </div>
+                <div class="service-content">
+                    <h3>Logistics to Ghana & Tanzania</h3>
+                    <p>We offer reliable logistics services, ensuring safe and timely delivery of goods to Ghana and Tanzania. Your goods are in safe hands.</p>
+                    <a href="https://wa.me/8619817402144" target="_blank" class="service-btn">Learn More</a>
+                </div>
+            </div>
+            <!-- Service 3: Study Abroad -->
+            <div class="service-box mix studyabroad">
+                <div class="service-image">
+                    <img src="images/study abroad.jpg" alt="Study Abroad">
+                </div>
+                <div class="service-content">
+                    <h3>Study Abroad</h3>
+                    <p>We provide comprehensive guidance and support for students seeking to study abroad, ensuring you have the best educational experience.</p>
+                    <a href="https://wa.me/8619817402144" target="_blank" class="service-btn">Get Advice</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Product-sourcing" class="product-sourcing">
+        <h2 class="section-title">Product Sourcing</h2>
+        <div class="content">
+            <div class="image-container">
+                <div class="product-image">
+                    <img src="images/product sourcing.jpg" alt="Product Sourcing" />
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="product-text">
+                    <p>Finding the right products is crucial for the success of any business. At our company, we make product sourcing simple, efficient, and affordable. Our team of experts works directly with manufacturers to bring you high-quality products at the best prices.</p>
+                    <p>Whether you're looking to source unique items for your store or need a reliable partner for large-scale product sourcing, we’ve got you covered. We offer comprehensive services, including product research, quality assurance, negotiation, and logistics, to ensure your products arrive safely and meet your expectations.</p>
+                    <a href="https://wa.me/8619817402144" class="cta-button">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+       
+    
+    <section id="Logistics" class="logistics-section">
+        <h2 class="section-title">Logistics</h2>
+        <div class="logistics-content">
+            <div class="logistics-image">
+                <img src="images/logistics.jpg" alt="Logistics" />
+            </div>
+            <div class="logistics-text">
+                <p>Efficient logistics are the backbone of successful product delivery. Our logistics solutions ensure that your products move quickly, safely, and affordably across the globe. We partner with trusted carriers and utilize optimized routes to minimize delivery times and costs.</p>
+                <p>Whether you need local distribution or international shipping, our logistics team is equipped to handle all your needs, ensuring smooth transportation and reliable tracking. Let us streamline your logistics operations so you can focus on growing your business.</p>
+                <a href="https://wa.me/8619817402144" class="cta-button">Get in touch</a>
+            </div>
+        </div>
+    </section>    
+      
+    
+    <section id="Study-abroad" class="study-abroad-section">
+        <h2 class="section-title">Study Abroad</h2>
+        <div class="study-abroad-content">
+            <div class="study-abroad-image">
+                <img src="images/study abroad.jpg" alt="Study Abroad" />
+            </div>
+            <div class="study-abroad-text">
+                <p>Explore opportunities to study in some of the best institutions around the world. Our study abroad programs offer students a chance to immerse themselves in different cultures while gaining high-quality education and global exposure.</p>
+                <p>From application assistance to visa processing and accommodation, our team provides comprehensive support throughout your journey. Let us help you unlock your full potential by guiding you through every step of your international education experience.</p>
+                <a href="https://wa.me/8619817402144" class="cta-button">Get in touch</a>
+            </div>
+        </div>
+    </section>
+    
+    
+      
+    
+    <section id="faqs" class="faqs-section">
+        <div class="container">
+            <h2>FAQs</h2>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What services do I offer?
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>I offer a wide range of services including product sourcing, logistics, study abroad programs, and more. Our goal is to provide comprehensive support for businesses and individuals.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    How can I contact your support team?
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>You can contact my support team via WhatsApp on +8619817402144</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What is the process for sourcing products?
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Our product sourcing process involves identifying suppliers, negotiating prices, quality checks, and managing logistics to ensure timely delivery of high-quality products.</p>
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    <footer class="footer">  
+        <div class="social">  
+            <a href="https://www.linkedin.com/in/jackson-ansah-323122177/"><img src="images/linkedin.png" alt="LinkedIn" width="24" height="24"></a>  
+            <a href="https://www.facebook.com/profile.php?id=61566188545291"><img src="images/facebook.png" alt="Facebook" width="24" height="24"></a>  
+            <a href="https://www.instagram.com/ansah_jackson99/profilecard/?igsh=MXVqc2RkM2QzMW11eQ=="><img src="images/instagram.png" alt="Instagram" width="24" height="24"></a>  
+            <a href="https://x.com/ansah_jackson"><img src="images/x.png" alt="X (Twitter)" width="24" height="24"></a>  
+        </div>   
+    
+        <ul class="list">  
+            <li><a href="merchandise.html#FAQs">FAQs</a></li> <!-- Update to link to the new page -->  
+            <li><a href="merchandise.html#home">Merchandise</a></li> <!-- Update to link to the new page -->  
+            <li<a href="portfolio.html#contact">Contact</a>
+        </ul>  
+        <p class="copyright">  
+            © Ansah Jackson | All Rights Reserved  
+        </p>  
+      </footer>  
+    
+    <script src="mixitup.min.js"></script>
+    <script src="merchandise.js"></script>  
+</body>
+</html>
